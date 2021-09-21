@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660748118087",
+    "project_id": "wikings-be9d5",
+    "storage_bucket": "wikings-be9d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660748118087:android:f85b916a2f502139a9e962",
+        "android_client_info": {
+          "package_name": "com.example.wikings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660748118087-8ba41f7de68m20uonf21qdr8ke4f8vp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtuALybAdrtTwdxat4yfqqZdVtyNIQCew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660748118087-8ba41f7de68m20uonf21qdr8ke4f8vp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
