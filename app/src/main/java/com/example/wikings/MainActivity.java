@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.wikings.Pasandi.Add_Places;
 import com.example.wikings.Pasandi.Home;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void go(View view){
-        startActivity(new Intent(getApplicationContext(), Home.class));
+        startActivity(new Intent(getApplicationContext(), Add_Places.class));
     }
 }
