@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:openDrawer="start"
+    tools:context=".Shehani.Customer_view_place_item"
+    android:fitsSystemWindows="true">
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PlantManagerUserInterface">
+
+
+
+        <EditText
+            android:id="@+id/cus_plant_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/input_plant_search"
+            android:drawableRight="@drawable/ic_search"
+            android:hint="Search plant  ..."
+            android:paddingLeft="20dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></EditText>
+
+        <ImageView
+            android:id="@+id/single_plant_back_img"
+            android:layout_below="@+id/cus_plant_search"
+            android:layout_width="420dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/plant_background1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/plat_banner_cus"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="150dp"
+            android:textAlignment="center"
+            android:textColor="#22a345"
+
+            android:textSize="36sp"
+            android:text="Welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cus_plant_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="740dp"
+            android:layout_below="@+id/plat_banner_cus"
+            android:layout_marginTop="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

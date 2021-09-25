@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.wikings.Pasandi.Add_Places;
-import com.example.wikings.Pasandi.Home;
+import com.example.wikings.gdgdhdh.Add_Places;
+import com.example.wikings.gdgdhdh.View_Places;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void go(View view){
+    public void go1(View view){
         startActivity(new Intent(getApplicationContext(), Add_Places.class));
+    }
+    public void go2(View view){
+        startActivity(new Intent(getApplicationContext(), View_Places.class));
     }
 }

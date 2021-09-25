@@ -1,3 +1,58 @@
 <resources>
     <string name="app_name">WIKINGS</string>
+    <string name="logoName">Viking Home</string>
+    <string name="team">Develop By</string>
+    <string name="teamName">Code Cluster Studio</string>
+    <string name="search_text">Search</string>
+    <string name="search_icon">Search...</string>
+    <string name="home">Home</string>
+
+    <string name="message">message</string>
+    <!--    <string name="shipping_address">Shipping Address</string>-->
+    <string name="add_plant_banner">Add  New Place!</string>
+    <string name="add_plant_name">Place Name</string>
+    <string name="enter_new_plant_name">Enter place name</string>
+    <string name="add_plant_type">Province</string>
+    <string name="add_plant_price">Description</string>
+    <string name="enter_plant_price">Enter Description</string>
+    <string name="add_button">Add</string>
+    <string name="delete_plant_banner">Delete Place</string>
+    <string name="deelete_plant_item_number">Enter Place Item Number</string>
+    <string name="display_delete_item_number" />
+    <string name="delete_plant_name">Place Name</string>
+    <string name="display_delete_plant_name" />
+    <string name="delete_plant_type">Place Type</string>
+    <string name="display_delete_plant_type" />
+    <string name="delete_plant_price">Place Price</string>
+    <string name="display_delete_plant_price" />
+    <string name="delete_button">Delete</string>
+    <string name="update_plant_banner">Update Plants!</string>
+    <string name="update_plant_item_number">Update Place</string>
+    <string name="display_update_item_number" />
+    <string name="update_plant_name">Place Name</string>
+    <string name="dispaly_update_plant_name" />
+    <string name="update_plant_type">Province</string>
+    <string name="display_update_plant_type" />
+    <string name="update_plant_price">Description</string>
+    <string name="display_update_plant_price" />
+    <string name="update_plant_image">Update Image</string>
+    <string name="update_button">Update</string>
+    <string name="textUploadPlantimage">Upload Image</string>
+    <string name="cus_home_banner">Welcome Plants</string>
+    <string-array name="typebar">
+        <item>Select Province</item>
+        <item>UVA</item>
+        <item>Sabaragamuwa</item>
+        <item>North</item>
+
+    </string-array>
+
+    <string-array name="barr">
+        <item>Flower plant</item>
+        <item>Fruit plant</item>
+        <item>Indoor plant</item>
+        <item>Vegetable plant</item>
+    </string-array>
+
+
 </resources>

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_secondary_variant"
-    tools:context=".Pasandi.Add_Places">
+    android:background="@color/teal_200"
+    tools:context=".gdgdhdh.Add_Places">
 
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="409dp"
         android:layout_height="242dp"
         android:layout_marginBottom="48dp"
-        android:background="@drawable/upload2"
+
         android:onClick="onClick"
         app:layout_constraintBottom_toTopOf="@+id/txtdata"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,6 @@
         android:onClick="UploadImage"
         android:text="Save Data"
         android:textSize="18sp"
-        app:backgroundTint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +92,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_view" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
