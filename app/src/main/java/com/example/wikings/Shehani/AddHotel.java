@@ -119,7 +119,7 @@ public class AddHotel extends AppCompatActivity {
                 }
                 if(Address.isEmpty())
                 {
-                    address.setError("Enter a price");
+                    address.setError("Please Enter a price");
                     return;
                 }
                  if(Phone.isEmpty() || Phone.length()!= 10)
