@@ -41,7 +41,6 @@ public class AddHotel extends AppCompatActivity {
     private ProgressBar imgProgressBar;
     private Button addPlantButton;
 
-
     Uri addImageUri, dbIMG;
     boolean isImageAdded = false;
 
