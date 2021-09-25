@@ -2,22 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wikings">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WIKINGS">
-        <activity android:name=".Pasandi.Add_Places"></activity>
-        <activity android:name=".Pasandi.Home" />
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.WIKINGS"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Shehani.ManagerUserInterface">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Shehani.Customer_view_place_item" >
+
+        </activity>
+        <activity android:name=".Shehani.HotelView" >
+
+        </activity>
+        <activity android:name=".Shehani.AddHotel">
+
+        </activity>
+        <activity android:name=".gdgdhdh.View_Places" />
+        <activity android:name=".gdgdhdh.Add_Places" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

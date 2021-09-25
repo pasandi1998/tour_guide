@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF1EB"
+    tools:context=".PlantItemView">
+
+    <ImageView
+        android:id="@+id/single_plant_item_img_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edit_back_border"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/text_plant_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:background="#ECF1EB"
+        android:gravity="center"
+        android:text="cherry"
+        android:textColor="#756f6f"
+        android:textSize="25dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/province"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:background="#ECF1EB"
+        android:gravity="center"
+        android:text="250"
+        android:textColor="#756f6f"
+        android:textSize="25dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        android:background="#ECF1EB"
+        android:gravity="center"
+        android:text="250"
+        android:textColor="#756f6f"
+        android:textSize="25dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:background="#ECF1EB"
+        android:gravity="center"
+        android:text="250"
+        android:textColor="#756f6f"
+        android:textSize="25dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:background="#ECF1EB"
+        android:gravity="center"
+        android:text="250"
+        android:textColor="#756f6f"
+        android:textSize="25dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="480dp"
+        android:background="#ECF1EB"
+        android:gravity="center"
+        android:hint="Fruit Plant"
+        android:textColor="#756f6f"
+        android:textSize="25dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/plant_delete_button"
+        android:layout_width="163dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/description"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_style"
+        android:text="Delete"
+        android:textColor="#0a0707"
+        app:strokeColor="#FBFFFB"></Button>
+
+</RelativeLayout>
