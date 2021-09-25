@@ -156,7 +156,6 @@ public class AddHotel extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void addPlant(String Name,String Province,String Address,Double Phone,Double Price,String Description) {
