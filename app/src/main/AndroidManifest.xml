@@ -9,7 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WIKINGS">
-        <activity android:name=".Pasandi.Home"></activity>
+        <activity
+            android:name="Nipuna.addEvent"
+            android:exported="true" />
+        <activity
+            android:name="Nipuna.addNewEvent"
+            android:exported="true" />
+        <activity
+            android:name="Nipuna.Addd"
+            android:exported="true" />
+        <activity
+            android:name="Nipuna.View"
+            android:exported="true" />
+        <activity
+            android:name="Nipuna.Galle"
+            android:exported="true" />
+        <activity
+            android:name="Nipuna.Kite"
+            android:exported="true" />
+        <activity
+            android:name="Nipuna.Event"
+            android:exported="true" />
+        <activity android:name=".Pasandi.Home" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
