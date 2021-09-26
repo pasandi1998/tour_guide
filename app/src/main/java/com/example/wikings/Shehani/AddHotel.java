@@ -41,7 +41,6 @@ public class AddHotel extends AppCompatActivity {
     private ProgressBar imgProgressBar;
     private Button addPlantButton;
 
-
     Uri addImageUri, dbIMG;
     boolean isImageAdded = false;
 
@@ -119,7 +118,7 @@ public class AddHotel extends AppCompatActivity {
                 }
                 if(Address.isEmpty())
                 {
-                    address.setError("Enter a price");
+                    address.setError("Please Enter a price");
                     return;
                 }
                  if(Phone.isEmpty() || Phone.length()!= 10)
@@ -156,7 +155,6 @@ public class AddHotel extends AppCompatActivity {
 
             }
         });
-
 
     }
 

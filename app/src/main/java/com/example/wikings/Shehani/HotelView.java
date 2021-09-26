@@ -33,6 +33,7 @@ public class HotelView extends AppCompatActivity {
 
     DatabaseReference databaseReference,dataReference;
     StorageReference  storageReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
