@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WIKINGS"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Malithi.SignUp"
+            android:exported="true" />
         <activity android:name=".Shehani.ManagerUserInterface">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,15 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Shehani.Customer_view_place_item" >
-
-        </activity>
-        <activity android:name=".Shehani.HotelView" >
-
-        </activity>
-        <activity android:name=".Shehani.AddHotel">
-
-        </activity>
+        <activity android:name=".Shehani.Customer_view_place_item"></activity>
+        <activity android:name=".Shehani.HotelView"></activity>
+        <activity android:name=".Shehani.AddHotel"></activity>
         <activity android:name=".gdgdhdh.View_Places" />
         <activity android:name=".gdgdhdh.Add_Places" />
         <activity android:name=".MainActivity" />

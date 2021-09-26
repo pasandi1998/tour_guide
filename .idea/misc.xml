@@ -6,6 +6,12 @@
         <entry key="..\:/VIKINGS/app/src/main/res/layout/activity_add_plant.xml" value="0.25416666666666665" />
         <entry key="..\:/VIKINGS/app/src/main/res/layout/activity_plant_item_view.xml" value="0.25416666666666665" />
         <entry key="..\:/VIKINGS/app/src/main/res/layout/activity_plant_manager_user_interface.xml" value="0.25416666666666665" />
+        <entry key="..\:/tour_guide/app/src/main/res/layout/activity_plant_item_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/tour_guide/app/src/main/res/layout/activity_plant_manager_user_interface.xml" value="0.20380434782608695" />
+        <entry key="..\:/tour_guide/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/tour_guide/app/src/main/res/layout/plant_view.xml" value="0.20380434782608695" />
+        <entry key="..\:/tour_guide/app/src/main/res/layout/single_place.xml" value="0.20380434782608695" />
+        <entry key="..\:/tour_guide/app/src/main/res/layout/toolbar.xml" value="0.20380434782608695" />
       </map>
     </option>
   </component>
