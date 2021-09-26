@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<!--    android:background="@color/lightWhite"-->
-<!--    tools:context="Event.addEvent">-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:padding="15dp"/>
-<!--                android:src="@drawable/back_icon" -->
+
 
         </RelativeLayout>
 
@@ -80,7 +78,7 @@
                 android:overScrollMode="always"
                 android:padding="10dp"
                 android:scrollbarStyle="insideInset" />
-<!--                android:hint="@string/province"-->
+
 
 
 
@@ -195,7 +193,6 @@
                 android:textSize="14dp"
                 android:textStyle="bold"
                 app:backgroundTint="@android:color/holo_orange_light" />
-<!--                android:background="@color/colorPrimary"-->
 
 
             <ImageView
@@ -219,8 +216,6 @@
             android:text="ADD"
             android:textStyle="bold"
             app:backgroundTint="@android:color/holo_orange_light" />
-            android:text="@string/submit"
-            android:textColor="@color/lightWhite"
 
     </LinearLayout>
 
