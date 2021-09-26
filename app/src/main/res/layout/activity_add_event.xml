@@ -185,12 +185,16 @@
                 android:id="@+id/choose_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:padding="10dp"
                 android:text="@string/select"
                 android:textColor="@color/black"
                 android:textSize="14dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:backgroundTint="@android:color/holo_orange_light" />
 <!--                android:background="@color/colorPrimary"-->
 
 
@@ -212,7 +216,9 @@
             android:background="@color/black"
             android:padding="10dp"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:text="ADD"
+            android:textStyle="bold"
+            app:backgroundTint="@android:color/holo_orange_light" />
             android:text="@string/submit"
             android:textColor="@color/lightWhite"
 
