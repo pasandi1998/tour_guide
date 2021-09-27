@@ -23,6 +23,7 @@ public class Hotel {
         ImageUrl = imageUrl;
     }
 
+
     public String getName() {
         return Name;
     }
