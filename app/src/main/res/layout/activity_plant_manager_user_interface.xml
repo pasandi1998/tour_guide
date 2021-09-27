@@ -11,15 +11,14 @@
     android:background="#ECF1EB">
 
 
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/side_nav2"
-        android:layout_width="264dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/side_nav2"-->
+<!--        android:layout_width="264dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--         />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -65,13 +64,13 @@
 
         <TextView
             android:layout_width="355dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:text="Welcome To Hotel Management"
             android:textAlignment="center"
-            android:textColor="#22a345"
-            android:typeface="serif"
+            android:textColor="@color/black"
             android:textSize="28sp"
-            android:text="Welcome"
+            android:typeface="serif"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -105,10 +104,11 @@
             android:layout_margin="25dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="44dp"
-            android:background="#98fc5d"
-            android:backgroundTint="#379524"
+
+
             android:paddingBottom="40dp"
             android:src="@drawable/ic_add"
+            app:backgroundTint="@color/cardview_dark_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 

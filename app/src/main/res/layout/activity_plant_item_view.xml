@@ -18,104 +18,123 @@
         android:background="@drawable/edit_back_border"
         android:scaleType="fitXY" />
 
-    <TextView
+    <EditText
         android:id="@+id/text_plant_item_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
-        android:background="#ECF1EB"
+        android:background="@drawable/input_plant_search"
         android:gravity="center"
         android:text="cherry"
         android:textColor="#756f6f"
         android:textSize="25dp"
         android:textStyle="bold">
 
-    </TextView>
+    </EditText>
 
-    <TextView
+    <EditText
         android:id="@+id/province"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="320dp"
-        android:background="#ECF1EB"
+        android:background="@drawable/input_plant_search"
         android:gravity="center"
         android:text="250"
         android:textColor="#756f6f"
         android:textSize="25dp"
         android:textStyle="bold">
 
-    </TextView>
+    </EditText>
 
-    <TextView
+    <EditText
         android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="360dp"
-        android:background="#ECF1EB"
+        android:background="@drawable/input_plant_search"
         android:gravity="center"
         android:text="250"
         android:textColor="#756f6f"
         android:textSize="25dp"
         android:textStyle="bold">
 
-    </TextView>
+    </EditText>
 
-    <TextView
+    <EditText
         android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
-        android:background="#ECF1EB"
+        android:background="@drawable/input_plant_search"
         android:gravity="center"
         android:text="250"
         android:textColor="#756f6f"
         android:textSize="25dp"
         android:textStyle="bold">
 
-    </TextView>
+    </EditText>
 
-    <TextView
+    <EditText
         android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="440dp"
-        android:background="#ECF1EB"
+        android:background="@drawable/input_plant_search"
         android:gravity="center"
         android:text="250"
         android:textColor="#756f6f"
         android:textSize="25dp"
         android:textStyle="bold">
 
-    </TextView>
+    </EditText>
 
-    <TextView
+    <EditText
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="480dp"
-        android:background="#ECF1EB"
+        android:background="@drawable/input_plant_search"
         android:gravity="center"
         android:hint="Fruit Plant"
         android:textColor="#756f6f"
         android:textSize="25dp"
         android:textStyle="bold">
 
-    </TextView>
+    </EditText>
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="163dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/description"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_style"
+        android:text="Update"
+        android:textColor="#E8DDDD"
+        android:textColorHint="#736D6D"
+        app:rippleColor="#615C5C"
+        app:strokeColor="#FBFFFB"></Button>
 
     <Button
         android:id="@+id/plant_delete_button"
         android:layout_width="163dp"
         android:layout_height="38dp"
         android:layout_below="@+id/description"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="27dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/button_style"
         android:text="Delete"
-        android:textColor="#0a0707"
+        android:textColor="#ECE3E3"
+        android:textColorHint="#656060"
         app:strokeColor="#FBFFFB"></Button>
 
 </RelativeLayout>

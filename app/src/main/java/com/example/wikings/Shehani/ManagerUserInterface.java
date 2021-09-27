@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+
 import com.example.wikings.Shehani.Model.Hotel;
 import com.example.wikings.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -57,9 +58,9 @@ public class ManagerUserInterface extends AppCompatActivity {
         plantRecycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         plantRecycleView.setHasFixedSize(true);
 
-        drawerLayout=findViewById(R.id.drawerLayout);
-        navigationView=findViewById(R.id.side_nav2);
-        toolbar=findViewById(R.id.toolbar);
+//        drawerLayout=findViewById(R.id.drawerLayout);
+//        navigationView=findViewById(R.id.side_nav2);
+//        toolbar=findViewById(R.id.toolbar);
 
 
 
@@ -98,7 +99,6 @@ public class ManagerUserInterface extends AppCompatActivity {
                 }else{
                     loadData("");
                 }
-
             }
         });
     }
@@ -110,7 +110,7 @@ public class ManagerUserInterface extends AppCompatActivity {
         options=new FirebaseRecyclerOptions.Builder<Hotel>().setQuery(query, Hotel.class).build();
         adapter=new FirebaseRecyclerAdapter<Hotel, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Hotel model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder,int position, @NonNull Hotel model) {
                 holder.textViewPlace.setText(model.getName());
                 holder.textViewProvince.setText(model.getProvince());
                 holder.textViewdescription.setText(String.valueOf(model.getPhone()));
@@ -121,15 +121,15 @@ public class ManagerUserInterface extends AppCompatActivity {
                         Intent intent=new Intent(ManagerUserInterface.this, HotelView.class);
                         intent.putExtra("plantKey",getRef(position).getKey());
                         startActivity(intent);
-                    }
-                });
+                   }
+              });
             }
 
-            @NonNull
+           @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_view,parent,false);
-                return new MyViewHolder(v);
+               View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_view,parent,false);
+              return new MyViewHolder(v);
             }
         };
         adapter.startListening();
