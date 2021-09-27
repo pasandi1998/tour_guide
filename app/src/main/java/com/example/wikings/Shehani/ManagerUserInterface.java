@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -109,6 +110,7 @@ public class ManagerUserInterface extends AppCompatActivity {
 
         options=new FirebaseRecyclerOptions.Builder<Hotel>().setQuery(query, Hotel.class).build();
         adapter=new FirebaseRecyclerAdapter<Hotel, MyViewHolder>(options) {
+            @SuppressLint("RecyclerView")
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder,int position, @NonNull Hotel model) {
                 holder.textViewPlace.setText(model.getName());

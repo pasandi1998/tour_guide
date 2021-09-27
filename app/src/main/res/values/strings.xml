@@ -39,6 +39,7 @@
     <string name="update_button">Update</string>
     <string name="textUploadPlantimage">Upload Image</string>
     <string name="cus_home_banner">Welcome Plants</string>
+    <string name="text_enter_location">Enter Location</string>
     <string-array name="typebar">
         <item>Select Province</item>
         <item>UVA</item>
