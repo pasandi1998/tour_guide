@@ -1,120 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    tools:openDrawer="start"
-    android:fitsSystemWindows="true"
     android:background="#ECF1EB">
 
-
-<!--    <com.google.android.material.navigation.NavigationView-->
-<!--        android:id="@+id/side_nav2"-->
-<!--        android:layout_width="264dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_gravity="start"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--         />-->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PlantManagerUserInterface">
+        android:orientation="vertical">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".PlantManagerUserInterface">
 
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/plant_search"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/input_plant_search"
+                android:drawableRight="@drawable/ic_search"
+                android:hint="Search place..."
+                android:paddingLeft="40dp"
+                android:paddingTop="8dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/plant_search"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/input_plant_search"
-            android:drawableRight="@drawable/ic_search"
-            android:hint="Search place..."
-            android:paddingLeft="40dp"
-            android:paddingTop="8dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></EditText>
-
-<!--        <ImageView-->
-<!--            android:id="@+id/single_plant_back_img"-->
-<!--            android:layout_below="@+id/cus_plant_search"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="150dp"-->
-<!--            android:layout_marginTop="100dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        </ImageView>-->
-
-        <TextView
-            android:layout_width="355dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="100dp"
-            android:text="Welcome To Hotel Management"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="28sp"
-            android:typeface="serif"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </TextView>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Welcome To Hotel Management"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plant_search" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/plant_recycleview"
-            android:layout_width="380dp"
-            android:layout_height="350dp"
-            android:layout_below="@+id/plant_search"
-            android:layout_marginStart="30dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/plant_recycleview"
+                android:layout_width="380dp"
+                android:layout_height="0dp"
+                android:layout_below="@+id/plant_search"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            android:layout_marginTop="250dp"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </LinearLayout>
 
-        </androidx.recyclerview.widget.RecyclerView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_floating_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="44dp"
+        android:paddingBottom="40dp"
+        android:src="@drawable/ic_add"
+        app:tint="#fff"
+        app:backgroundTint="@color/cardview_dark_background"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_floating_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="25dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="44dp"
-
-
-            android:paddingBottom="40dp"
-            android:src="@drawable/ic_add"
-            app:backgroundTint="@color/cardview_dark_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
