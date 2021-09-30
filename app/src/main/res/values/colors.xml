@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="text_shadow">#000000</color>
     <color name="black_200">#7f000000</color>
+    <color name="duskYellow">#FFDF00</color>
+    <color name="lightGrey">#575757</color>
 </resources>

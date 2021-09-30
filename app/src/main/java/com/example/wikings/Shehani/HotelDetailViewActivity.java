@@ -1,12 +1,16 @@
 package com.example.wikings.Shehani;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -35,9 +39,10 @@ public class HotelDetailViewActivity extends AppCompatActivity {
     Button delete_btn, update;
     private String Name, description, Address, Province, Phone, Price, plantImgUrl;
 
-    DatabaseReference databaseReference, dataReference;
+    DatabaseReference databaseReference, dataReference, ratingDatabaseReference;
     StorageReference storageReference;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,8 @@ public class HotelDetailViewActivity extends AppCompatActivity {
 
         setTitle("Hotel Details");
 
+        String hotelKey = getIntent().getStringExtra("hotelKey");
+
         imageView = findViewById(R.id.img_hotel);
         pl_name = findViewById(R.id.text_hotel_name);
         pl_type = findViewById(R.id.province);
@@ -57,11 +64,11 @@ public class HotelDetailViewActivity extends AppCompatActivity {
         pl_description = findViewById(R.id.description);
         delete_btn = findViewById(R.id.btn_delete);
         update = findViewById(R.id.btn_update);
+        RatingBar ratingBar = findViewById(R.id.ratingBar);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Hotels");
+        ratingDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Ratings").child(hotelKey);
 
-
-        String hotelKey = getIntent().getStringExtra("hotelKey");
         dataReference = FirebaseDatabase.getInstance().getReference().child("Hotels").child(hotelKey);
         storageReference = FirebaseStorage.getInstance().getReference().child("HotelImages").child(hotelKey + ".jpg");
 
@@ -102,11 +109,48 @@ public class HotelDetailViewActivity extends AppCompatActivity {
                 update();
             }
         });
+
         delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog diaBox = AskDeleteOption();
                 diaBox.show();
+            }
+        });
+
+        ratingBar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Intent intent = new Intent(HotelDetailViewActivity.this, RatingActivity.class);
+                    intent.putExtra("hotelKey", hotelKey);
+                    startActivity(intent);
+                }
+                return true;
+            }
+        });
+
+        ratingDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int ratingCount = 0;
+                float totalStars = 0;
+                for (DataSnapshot dSnapshot : snapshot.getChildren()) {
+                    Float startCount = dSnapshot.child("startCount").getValue(Float.class);
+                    ratingCount++;
+                    totalStars = totalStars + startCount;
+                }
+
+
+                if(ratingCount == 0){
+                    ratingBar.setRating(5);
+                }else{
+                    ratingBar.setRating(totalStars / ratingCount);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });

@@ -19,10 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Shehani.Customer_view_place_item" >
+        <activity android:name=".Shehani.RatingActivity">
 
         </activity>
-        <activity android:name=".Shehani.HotelDetailViewActivity" >
+        <activity android:name=".Shehani.HotelDetailViewActivity">
 
         </activity>
         <activity android:name=".Shehani.AddHotelActivity">
