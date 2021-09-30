@@ -5,7 +5,7 @@ public class Hotel {
     private String Province;
     private String Description;
     private String Address;
-    private Double Phone;
+    private String Phone;
     private Double Price;
 
     private String ImageUrl;
@@ -13,7 +13,7 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel(String name, String province, String description, String address, Double phone, Double price, String imageUrl) {
+    public Hotel(String name, String province, String description, String address, String phone, Double price, String imageUrl) {
         Name = name;
         Province = province;
         Description = description;
@@ -56,11 +56,11 @@ public class Hotel {
         Address = address;
     }
 
-    public Double getPhone() {
+    public String getPhone() {
         return Phone;
     }
 
-    public void setPhone(Double phone) {
+    public void setPhone(String phone) {
         Phone = phone;
     }
 

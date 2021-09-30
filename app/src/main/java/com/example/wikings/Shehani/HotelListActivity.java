@@ -12,8 +12,6 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,67 +20,46 @@ import com.example.wikings.Shehani.Model.Hotel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
-public class ManagerUserInterface extends AppCompatActivity {
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
+public class HotelListActivity extends AppCompatActivity {
 
-    EditText searchPlant;
+    EditText searchHotel;
     RecyclerView plantRecycleView;
-    FloatingActionButton plant_floating_button;
+    FloatingActionButton fab_add_hotel;
 
     FirebaseRecyclerOptions<Hotel> options;
-    FirebaseRecyclerAdapter<Hotel,MyViewHolder>adapter;
+    FirebaseRecyclerAdapter<Hotel, MyViewHolder> adapter;
     DatabaseReference databaseReference;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plant_manager_user_interface);
+        setContentView(R.layout.activity_hotel_list);
 
         setTitle("Tour Guide");
 
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("Hotels");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Hotels");
 
-        searchPlant=findViewById(R.id.plant_search);
-        plantRecycleView=findViewById(R.id.plant_recycleview);
-        plant_floating_button=findViewById(R.id.add_floating_btn);
+        searchHotel = findViewById(R.id.plant_search);
+        plantRecycleView = findViewById(R.id.plant_recycleview);
+        fab_add_hotel = findViewById(R.id.add_floating_btn);
         plantRecycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         plantRecycleView.setHasFixedSize(true);
 
-//        drawerLayout=findViewById(R.id.drawerLayout);
-//        navigationView=findViewById(R.id.side_nav2);
-//        toolbar=findViewById(R.id.toolbar);
-
-
-
-
-//        navigationView.bringToFront();
-//        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-//        drawerLayout.addDrawerListener(toggle);
-//        toggle.syncState();
-
-
-
-
-        plant_floating_button.setOnClickListener(new View.OnClickListener() {
+        fab_add_hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AddHotel.class));
+                startActivity(new Intent(getApplicationContext(), AddHotelActivity.class));
             }
         });
 
         loadData("");
-        searchPlant.addTextChangedListener(new TextWatcher() {
+
+        searchHotel.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -95,9 +72,9 @@ public class ManagerUserInterface extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.toString()!=null){
+                if (s.toString() != null) {
                     loadData(s.toString());
-                }else{
+                } else {
                     loadData("");
                 }
             }
@@ -106,38 +83,34 @@ public class ManagerUserInterface extends AppCompatActivity {
 
     private void loadData(String data) {
 
-        Query query=databaseReference.orderByChild("Name").startAt(data).endAt(data+"\uf8ff");
+        Query query = databaseReference.orderByChild("Name").startAt(data).endAt(data + "\uf8ff");
 
-        options=new FirebaseRecyclerOptions.Builder<Hotel>().setQuery(query, Hotel.class).build();
-        adapter=new FirebaseRecyclerAdapter<Hotel, MyViewHolder>(options) {
+        options = new FirebaseRecyclerOptions.Builder<Hotel>().setQuery(query, Hotel.class).build();
+        adapter = new FirebaseRecyclerAdapter<Hotel, MyViewHolder>(options) {
             @SuppressLint("RecyclerView")
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder,int position, @NonNull Hotel model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Hotel model) {
                 holder.textViewPlace.setText(model.getName());
                 holder.textViewProvince.setText(model.getProvince());
-                holder.textViewdescription.setText(String.valueOf(model.getPhone()));
-                Picasso.get().load(model.getImageUrl()).into(holder.imageView);
+                Picasso.get().load(model.getImageUrl()).placeholder(R.drawable.no_image).into(holder.imageView);
                 holder.v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(ManagerUserInterface.this, HotelView.class);
-                        intent.putExtra("plantKey",getRef(position).getKey());
+                        Intent intent = new Intent(HotelListActivity.this, HotelDetailViewActivity.class);
+                        intent.putExtra("hotelKey", getRef(position).getKey());
                         startActivity(intent);
-                   }
-              });
+                    }
+                });
             }
 
-           @NonNull
+            @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-               View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_view,parent,false);
-              return new MyViewHolder(v);
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.hotel_view, parent, false);
+                return new MyViewHolder(v);
             }
         };
         adapter.startListening();
         plantRecycleView.setAdapter(adapter);
     }
-
-
-
 }

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WIKINGS"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Shehani.ManagerUserInterface">
+        <activity android:name=".Shehani.HotelListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +22,10 @@
         <activity android:name=".Shehani.Customer_view_place_item" >
 
         </activity>
-        <activity android:name=".Shehani.HotelView" >
+        <activity android:name=".Shehani.HotelDetailViewActivity" >
 
         </activity>
-        <activity android:name=".Shehani.AddHotel">
+        <activity android:name=".Shehani.AddHotelActivity">
 
         </activity>
         <activity android:name=".gdgdhdh.View_Places" />

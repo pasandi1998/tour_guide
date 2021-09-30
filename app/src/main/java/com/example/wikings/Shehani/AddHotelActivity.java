@@ -1,10 +1,6 @@
 package com.example.wikings.Shehani;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +12,11 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wikings.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,19 +30,17 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class AddHotel extends AppCompatActivity {
+public class AddHotelActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_ADD_IMAGE = 101;
-    private EditText name, address,phone,description,price;
+    private EditText name, address, phone, description, price;
     private Spinner addMenuType;
-    private ImageView addPlantImage;
+    private ImageView addHotelImage;
     private TextView textImgProgress;
     private ProgressBar imgProgressBar;
-    private Button addPlantButton;
+    private Button addHotelButton;
 
-    Uri addImageUri, dbIMG;
+    Uri addImageUri;
     boolean isImageAdded = false;
 
     DatabaseReference databaseReference;
@@ -51,34 +50,42 @@ public class AddHotel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_plant);
+        setContentView(R.layout.activity_add_hotel);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        setTitle("Add Hotel");
 
         name = findViewById(R.id.name);
         address = findViewById(R.id.address);
         phone = findViewById(R.id.phone);
         description = findViewById(R.id.description);
         price = findViewById(R.id.price);
-        addMenuType = findViewById(R.id.dropdown_add_plant_type);
-        addPlantImage = findViewById(R.id.add_plant_image);
+        addMenuType = findViewById(R.id.dropdown_add_hotel_type);
+        addHotelImage = findViewById(R.id.add_hotel_image);
         textImgProgress = findViewById(R.id.text_image_progress);
         imgProgressBar = findViewById(R.id.image_progress_bar);
-        addPlantButton = findViewById(R.id.btn_plant_add);
+        addHotelButton = findViewById(R.id.btn_hotel_add);
 
         textImgProgress.setVisibility(View.GONE);
         imgProgressBar.setVisibility(View.GONE);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Hotels");
         storageReference = FirebaseStorage.getInstance().getReference().child("HotelImages");
+    }
 
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        addPlantImage.setOnClickListener(new View.OnClickListener() {
-
+        addHotelImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -89,68 +96,63 @@ public class AddHotel extends AppCompatActivity {
             }
         });
 
-        addPlantButton.setOnClickListener(new View.OnClickListener() {
+        addHotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 String Name = name.getText().toString().trim();
-                 String Province = addMenuType.getSelectedItem().toString();
+                String Name = name.getText().toString().trim();
+                String Province = addMenuType.getSelectedItem().toString();
                 String Address = address.getText().toString();
                 String Phone = phone.getText().toString();
-                String Price =price.getText().toString();
+                String Price = price.getText().toString();
                 String Description = description.getText().toString();
 
-
-
-                Pattern pattern = Pattern.compile("[^a-zA-Z] ");
-                Matcher matcher = pattern.matcher(Name);
-                boolean isStringContainsSpecialCharacter = matcher.find();
-
-//                if(isStringContainsSpecialCharacter || TextUtils.isEmpty(Place))
-                if(Name.isEmpty())
-                {
+                if (Name.isEmpty()) {
                     name.setError("Please Enter valid Hotel Name...");
+                    name.requestFocus();
                     return;
                 }
-                 if(Province.equals("Select Hotel type"))
-                {
-                    Toast.makeText(AddHotel.this, "Please Select Hotel Type...", Toast.LENGTH_SHORT).show();
+
+                if (Province.equals("Select Hotel type")) {
+                    Toast.makeText(AddHotelActivity.this, "Please Select Hotel Type...", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(Address.isEmpty())
-                {
-                    address.setError("Please Enter a price");
+
+                if (Address.isEmpty()) {
+                    address.setError("Please Enter a address");
+                    address.requestFocus();
                     return;
                 }
-                 if(Phone.isEmpty() || Phone.length()!= 10)
-                {
+
+                if (Phone.isEmpty() || Phone.length() != 10) {
                     phone.setError("Please Enter valid Contact number..");
+                    phone.requestFocus();
                     return;
                 }
-                 if(Price.isEmpty())
-                {
+
+                if (Price.isEmpty()) {
                     price.setError("Please Enter price...");
+                    price.requestFocus();
                     return;
                 }
-                 if(Description.isEmpty())
-                {
+
+                if (Description.isEmpty()) {
                     description.setError("Please Enter description...");
+                    description.requestFocus();
                     return;
                 }
-                if(isImageAdded==false)
-                {
-                    Toast.makeText(AddHotel.this, "Please select image....", Toast.LENGTH_SHORT).show();
+
+                if (isImageAdded == false) {
+                    Toast.makeText(AddHotelActivity.this, "Please select image....", Toast.LENGTH_SHORT).show();
                     return;
-                }else{
-                    Double phone=0.0,price=0.0;
-                    try{
-                        phone = Double.parseDouble(Phone);
+                } else {
+                    Double price = 0.0;
+                    try {
                         price = Double.parseDouble(Price);
-                    }catch(Exception e) {
+                    } catch (Exception e) {
 
                     }
-                    addPlant(Name,Province,Address,phone,price,Description);
+                    addHotel(Name, Province, Address, Phone, price, Description);
                 }
-
 
 
             }
@@ -158,7 +160,7 @@ public class AddHotel extends AppCompatActivity {
 
     }
 
-    private void addPlant(String Name,String Province,String Address,Double Phone,Double Price,String Description) {
+    private void addHotel(String Name, String Province, String Address, String Phone, Double Price, String Description) {
         textImgProgress.setVisibility(View.VISIBLE);
         imgProgressBar.setVisibility(View.VISIBLE);
 
@@ -191,8 +193,7 @@ public class AddHotel extends AppCompatActivity {
                         databaseReference.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                startActivity(new Intent(getApplicationContext(), ManagerUserInterface.class));
-                                Toast.makeText(AddHotel.this, "Plant Item Added", Toast.LENGTH_SHORT).show();
+                                displayAlert();
                             }
                         }).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -210,13 +211,25 @@ public class AddHotel extends AppCompatActivity {
         });
     }
 
+    private void displayAlert() {
+        new AlertDialog.Builder(this)
+                .setMessage("New hotel added")
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(getApplicationContext(), HotelListActivity.class));
+                    }
+                }).show();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_ADD_IMAGE && data != null) {
             addImageUri = data.getData();
             isImageAdded = true;
-            addPlantImage.setImageURI(addImageUri);
+            addHotelImage.setImageURI(addImageUri);
         }
     }
 }

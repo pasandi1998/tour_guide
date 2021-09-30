@@ -40,12 +40,11 @@
     <string name="textUploadPlantimage">Upload Image</string>
     <string name="cus_home_banner">Welcome Plants</string>
     <string name="text_enter_location">Enter Location</string>
-    <string-array name="typebar">
+    <string-array name="province_list">
         <item>Select Province</item>
         <item>UVA</item>
         <item>Sabaragamuwa</item>
         <item>North</item>
-
     </string-array>
 
     <string-array name="barr">
